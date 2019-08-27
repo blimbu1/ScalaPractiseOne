@@ -1,0 +1,20 @@
+\_(.*?)\_   (match _ , capturing group -> () Capture everything after the _ signified by (.*?) ;
+?-> signifies lazy matches only upto the first _ ; \ used to tell the regex engine that the _ character is just a char and not to take it as a function;
+This includes the _ 's in the result. For e.g. how _are_ you regex return '_are_')
+
+\[(.*?)\]
+
+(?<=\[)(.*?)(?=\])  (?<= -----> signifies look behind; \[ ---> says look behind after you have matched a [ , \ backslash tells regex not to give [ special powers; (.*?)-----> signifies capturing group.It says catch everything. ? in (.*?) signifies lazy so it will only search upto the first end match;
+?= -----> says look forward or put everything in the capture group before the end match; \] ---->signifies end match character; ***** Important ******
+Using look back and look ahead because we don't want to include the '[' ']' in our output ***Important****)
+
+^(.*?)(?=\_)     (^ -----> says start from beginning of line; (.*?) ----> capture everthing upto the first match; ?= ---->signifies look ahead;
+\_ -----> signifies takes _ as _ and don't give _ special powers)
+
+(?i:_logs?)  -----> signifies search for the word "_logs" in our text ; ? at the end of _logs? tells s is optional; i ----> tells the regex
+engine to be case insensitive; ?: ---> tells regex engine to be non catching. related to memory. If non chatching results not stored hence faster/better
+performance)
+
+
+(?<=1)(0+)(?=1) -------------->Finds binary gaps;;; ?<= ~ signifies look behind. In this case look after you have found 1. (0+) signifies match one or more zeroes
+after your match;; ?= ~ signifes look uptil you find a '1'
